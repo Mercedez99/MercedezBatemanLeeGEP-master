@@ -17,10 +17,11 @@ public class Main extends PApplet {
         testGame = new Test(this);
         testGame.start();
     }
-//    public void keyPressed(){
-//        testGame.checkInput();
-//    }
+   public void keyPressed(){
+        testGame.checkInput();
+  }
     public void draw() {
+        background(0);
         testGame.update();
     }
 

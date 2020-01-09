@@ -19,6 +19,7 @@ Point point;
         parent.rect(x, y, 25, 25);
     }
 
+    // tells where to move player
     private void getPoints(){
         point = new Point(x,y);
     }

@@ -18,6 +18,7 @@ public class LevelEditor {
     }
 
     public void putObject(float x, float y){
+        //tells to place tile when user clicks
         System.out.println(placedObject.size());
 
         int roundedX = PApplet.round(x / 25)*25;

@@ -1,6 +1,7 @@
 package core.game_engine.game_objects;
 
 public class Point {
+    //base on coordinates
     private int x;
     private int y;
 

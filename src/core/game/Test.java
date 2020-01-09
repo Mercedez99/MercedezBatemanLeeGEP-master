@@ -9,7 +9,8 @@ public class Test {
   SceneManager sceneManager;
     GameManager gameManager;
     GameEngineManager gameEngineManager;
-
+    Ui uiCreator;
+//link with main for the direct functions
 
 
     public Test(PApplet p) {
@@ -22,26 +23,32 @@ public class Test {
         gameManager.start();
         gameEngineManager = new GameEngineManager(parent);
         gameEngineManager.start();
+        uiCreator = new Ui(parent);
 
 
     }
 
     public void update(){
         sceneManager.linkScenes();
+
         if(sceneManager.ActiveScene() == "Main Menu") {
             gameManager.update();
-
+           uiCreator.menuTitle();
 
         }
-        else if(sceneManager.ActiveScene() == "Editor"){
-           //what to display
+        else if(sceneManager.ActiveScene() == "Editor") {
+            //what to display
             gameEngineManager.update();
+        }
+         else if(sceneManager.ActiveScene() == "Game"){
+                gameManager.updateGame();
 
 
         }
     }
-   // public void checkInput(){
-     //   gameManager.checkInput();
-    //}
+   public void checkInput(){
+        // play move
+       gameManager.checkInput();
+    }
 }
 

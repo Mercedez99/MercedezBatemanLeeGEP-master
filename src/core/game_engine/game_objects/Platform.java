@@ -12,7 +12,7 @@ Point point;
     @Override
     public void update() {
        getPoints();
-       parent.fill(0,0,155);
+       parent.fill(255);
        parent.noStroke();
        parent.rect(x,y,25,25);
     }

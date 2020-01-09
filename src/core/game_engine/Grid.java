@@ -10,6 +10,7 @@ public class Grid {
     }
 
     public void margins() {
+        //building border
         parent.fill(225);
         parent.noStroke();
         parent.rectMode(parent.CORNER);
@@ -20,7 +21,8 @@ public class Grid {
     }
 
     public void editorBackground(){
-        parent.fill(255,255,0,100);
+        //background
+        parent.fill(175,0,255,100);
         parent.rectMode(parent.CORNER);
         parent.rect(0,0,600,600);
     }

@@ -32,6 +32,7 @@ public class PlayerController {
             case 'd':
                 player.moveRight();
         }
+        // second player stuff
 //        if (parent.key == 'w' || parent.key == 'W') {
 //            player.moveUp();
 //            return;
