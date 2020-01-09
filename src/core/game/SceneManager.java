@@ -6,33 +6,30 @@ import processing.core.PApplet;
 
 public class SceneManager {
     PApplet parent;
-    Scenes scene;
-    GameManager gameManager;
     Ui uiCreator;
+    String scene = "Main Menu";
+    GameManager gameManager;
 
     public SceneManager(PApplet p) {
         parent = p;
-        scene = Scenes.MAINMENU;
         gameManager = new GameManager(parent);
 
     }
 
-    public Scenes ActiveScene() {
+    public String ActiveScene() {
         return scene;
     }
 
     public void linkScenes() {
-        if (ActiveScene() == Scenes.MAINMENU) {
+        if (ActiveScene() == "Main Menu") {
             uiCreator = new Ui(parent);
-            uiCreator.menuTitle();
-            if(parent.mousePressed){
-                System.out.println(Scenes.EDITOR);
-                scene = Scenes.EDITOR;
+            if(uiCreator.keys() == 1){
+                scene = "Editor";
+                uiCreator = null;
             }
         }
-        else if(ActiveScene() == Scenes.EDITOR){
-            uiCreator = new Ui(parent);
-            uiCreator.editor();
+        else if(ActiveScene() == "Editor"){
+            //commands
         }
     }
 }

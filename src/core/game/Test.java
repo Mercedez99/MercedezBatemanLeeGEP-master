@@ -1,13 +1,17 @@
 package core.game;
 
 import core.Ui;
+import core.game_engine.GameEngineManager;
 import processing.core.PApplet;
 
 public class Test {
     PApplet parent;
   SceneManager sceneManager;
     GameManager gameManager;
-Scenes scenes;
+    GameEngineManager gameEngineManager;
+
+
+
     public Test(PApplet p) {
         this.parent = p;
     }
@@ -16,19 +20,28 @@ Scenes scenes;
         sceneManager = new SceneManager(parent);
         gameManager = new GameManager(parent);
         gameManager.start();
+        gameEngineManager = new GameEngineManager(parent);
+        gameEngineManager.start();
+
 
     }
 
     public void update(){
-        if(sceneManager.ActiveScene() == Scenes.MAINMENU) {
+        sceneManager.linkScenes();
+        if(sceneManager.ActiveScene() == "Main Menu") {
             gameManager.update();
+
+
         }
-        if(sceneManager.ActiveScene() == Scenes.EDITOR){
-            //game engine manager stuff
+        else if(sceneManager.ActiveScene() == "Editor"){
+           //what to display
+            gameEngineManager.update();
+
+
         }
     }
-    public void checkInput(){
-        gameManager.checkInput();
-    }
+   // public void checkInput(){
+     //   gameManager.checkInput();
+    //}
 }
 

@@ -1,6 +1,5 @@
 package core.game_engine;
 
-import core.game_engine.game_objects.Point;
 import processing.core.PApplet;
 
 public abstract class GameObject {
@@ -13,6 +12,13 @@ protected int y;
         this.x = x;
         this.y = y;
 
+    }
+
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return y;
     }
 
     public abstract void update();

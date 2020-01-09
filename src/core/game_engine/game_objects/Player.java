@@ -16,7 +16,7 @@ Point point;
         getPoints();
         parent.fill(255);
         parent.noStroke();
-        parent.rect(x, y, 40, 40);
+        parent.rect(x, y, 25, 25);
     }
 
     private void getPoints(){

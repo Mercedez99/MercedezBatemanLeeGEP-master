@@ -2,6 +2,7 @@ package core.game;
 
 import core.game_engine.GameObject;
 import core.game_engine.PlayerController;
+import core.game_engine.game_objects.Platform;
 import core.game_engine.game_objects.Player;
 import processing.core.PApplet;
 
@@ -9,8 +10,9 @@ import java.util.ArrayList;
 
 public class GameManager {
     PApplet parent;
-    PlayerController playerController;
-    GameObject player;
+   // PlayerController playerController;
+   // GameObject player;
+  //  Platform platform;
     SceneManager sceneManager;
     private ArrayList<GameObject> objectsOnScreen;
 
@@ -21,11 +23,13 @@ public class GameManager {
     }
 
     public void start(){
-        playerController = new PlayerController(parent);
-        player = new Player(parent,300,300);
-        objectsOnScreen.add(player);
+      //  playerController = new PlayerController(parent);
+      //  player = new Player(parent,300,300);
+      //  objectsOnScreen.add(player);
         sceneManager = new SceneManager(parent);
-        playerController = new PlayerController(parent);
+      //  playerController = new PlayerController(parent);
+      //  platform = new Platform(parent, 400, 400);
+      //  objectsOnScreen.add(platform);
     }
 
     public void update(){
@@ -33,11 +37,11 @@ public class GameManager {
             gameObject.update();
         }
         sceneManager.linkScenes();
-        playerController.addPlayer((Player) player);
-        checkInput();
+       // playerController.addPlayer((Player) player);
+      //  checkInput();
     }
 
-    public void checkInput(){
-        playerController.checkInput();
-    }
+//   public void checkInput(){
+//        playerController.checkInput();
+//    }
 }
